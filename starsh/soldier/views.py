@@ -9,4 +9,4 @@ from .tables import ServiseIDTable
 class ServiseIDListView(SingleTableView):
     model = ServiseID
     table_class = ServiseIDTable
-    template_name = 'tutorial/people.html'
+    template_name = 'soldier/soldier.html'

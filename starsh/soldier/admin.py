@@ -52,7 +52,7 @@ class ServiseIDAdmin(admin.ModelAdmin):
 
         })
     )
-    change_form_template = 'admin/ocoba_change_form.html'
+    # change_form_template = 'admin/ocoba_change_form.html'
     # formfield_overrides = {
     #         models.DateField: {'widget': MonthPickerInput}
     #     }
