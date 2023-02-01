@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "soldier",
     "storage",
     "gunwarehouse",
+    "django_tables2",
 ]
 
 MIDDLEWARE = [
