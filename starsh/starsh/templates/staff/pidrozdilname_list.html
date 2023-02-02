@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load get_name %}
+
+{% block extra_css %}
+    <link href="{% static "staff/pidrozdilname_list.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    
+    
+    {% translate  "Staff" as staff %}
+    {% translate "Npp" as npp %}
+    {% translate "Name" as name %}
+    {% translate "shpk" as shpk %}
+    {% translate "Osoba" as ocoba %}
+    {% translate "vos" as vos %}
+    {% translate "poz" as pozyvnyy %}
+    {% translate "salary" as salary %}
+    {% translate "Availability" as availability %}
+    {% translate "Vacant" as vacant %}
+    
+    <table class="tableSection">
+    <thead>
+    <tr>
+    <th>{{npp}}</th>
+    <th>{{name}}</th>
+    <th>{{shpk}}</th>
+    <th>{{ocoba}}</th>
+    <th>{{vos}}</th>
+    <th>{{pozyvnyy}}</th>
+    <th>{{salary}}</th>
+    <th>{{availability}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    {% for pidroz in pidr %} 
+    <tr>
+        <td colspan="8">
+            <b>{{pidroz.p_name}} </b>
+        </td>
+        
+    </tr>
+        
+        {%for shtat in shtatka%}
+        
+          
+            {%if shtat.p_id == pidroz.p_id%}
+            <tr>
+                <td>
+                    {{shtat.sh.pos_name}}
+                </td>
+                {%get shtat.pos_id as name_pers%}
+                <td>
+                    {%for np in name_pers%}
+                        {{np.name}}
+                    {% empty %}
+                        <b>vacant</b>
+                    {%endfor%}
+                </td>
+            </tr>    
+            {%endif%}
+
+        
+        {%endfor%}
+   
+    {%endfor%}
+    
+</tbody>
+</table> 
+
+{% endblock %}

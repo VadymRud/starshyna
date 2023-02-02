@@ -32,15 +32,15 @@ class ZvannyaName(models.Model):
 class Staff(models.Model):
     # Штатка
     #порядковий номер в штатці
-    unicum = models.PositiveBigIntegerField(verbose_name=_('Unic number'), blank=True)
+    unicum = models.PositiveBigIntegerField(verbose_name=_('Unic number'), null=True, blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, verbose_name=_('Company'))
     name = models.CharField(max_length=512, verbose_name=_('Name'))
     shpk = models.ForeignKey(SHPK, on_delete=models.CASCADE, blank=True, verbose_name=_('shpk'))
     ocoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('ocoba'), null=True)
     vos = models.CharField(max_length=512, verbose_name=_('VOS'))
     poz = models.CharField(max_length=512, verbose_name=_('pozyvnyy'), blank=True)
-    salary = models.PositiveBigIntegerField(verbose_name=_('salary'), blank=True)
-    tariff_category = models.PositiveBigIntegerField(verbose_name=_('tariff category'), blank=True)
+    salary = models.PositiveBigIntegerField(verbose_name=_('salary'), blank=True, null=True, default=0)
+    tariff_category = models.PositiveBigIntegerField(verbose_name=_('tariff category'), blank=True, null=True, default=0)
     vacant = models.BooleanField(verbose_name=_('Vacant'), blank=True, null=True, default=True)
 
     def __str__(self):

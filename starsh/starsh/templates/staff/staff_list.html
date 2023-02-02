@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}qqqqq
+    {% for pidroz in object_list %} 
+        {{pidroz.p_name}} <br />
+    {% endfor %}
+    {% comment %} {% translate  "Staff" as staff %}
+    {% translate "Npp" as npp %}
+    {% translate "Name" as name %}
+    {% translate "shpk" as shpk %}
+    {% translate "Osoba" as ocoba %}
+    {% translate "vos" as vos %}
+    {% translate "poz" as pozyvnyy %}
+    {% translate "salary" as salary %}
+    {% translate "Availability" as availability %}
+    {% translate "Vacant" as vacant %}
+    <h1>{{staff}}</h1>
+
+    <table>
+    <thead>
+    <tr>
+    <th>{{npp}}</th>
+    <th>{{name}}</th>
+    <th>{{shpk}}</th>
+    <th>{{ocoba}}</th>
+    <th>{{vos}}</th>
+    <th>{{pozyvnyy}}</th>
+    <th>{{salary}}</th>
+    <th>{{availability}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for staff in object_list %}
+    <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ staff.name }}</td>
+    <td>{{ staff.shpk.name }}</td>
+    <td>
+        {%if  staff.vacant == False%}
+            {{ staff.ocoba.sename }} {{ staff.ocoba.name }}  {{ staff.ocoba.third_name }}
+        {%else%}
+            {{vacant}}
+        {%endif%}
+    </td>
+    <td>{{ staff.vos }}</td>
+    <td>{{ staff.poz }}</td>
+    <td>{{ staff.salary }}/ {{ staff.tariff_category }}</td>
+    <td></td>
+    
+    </tr>
+
+{% endfor %}
+</tbody>
+</table> {% endcomment %}
+
+{% endblock %}
