@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company,
-                     Education, Creed, Nationality, Command, Region, State)
+                     Education, Creed, Nationality, Command, Region, State, FileUpload)
 #from osoba.widgets import CustomDatePickerInput
 
 
@@ -70,3 +70,4 @@ admin.site.register(Education)
 admin.site.register(Command)
 admin.site.register(State)
 admin.site.register(Region)
+admin.site.register(FileUpload)

@@ -233,3 +233,11 @@ class Command(models.Model):
     class Meta:
         verbose_name = _('Command')
         verbose_name_plural = _('Commands')
+
+
+def file_upload_to_directory(instance, filename):
+    return '/'.join(['media', str(instance.id), filename])
+
+
+class FileUpload(models.Model):
+    file = models.FileField(upload_to=file_upload_to_directory, blank=True, null=True);

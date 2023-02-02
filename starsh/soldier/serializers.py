@@ -8,3 +8,10 @@ class RegionSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['name']
 
 
+#FileUpload
+class FileUploadSerializer(serializers.HyperlinkedModelSerializer):
+    file = serializers.FileField(required=False)
+
+    class Meta:
+        model = FileUpload
+        fields = ['file']
