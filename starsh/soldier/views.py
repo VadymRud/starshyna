@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from django_tables2 import SingleTableView
 from .models import ServiseID, Region, FileUpload
 from .tables import ServiseIDTable
@@ -27,9 +27,8 @@ class RegionViewSet(viewsets.ModelViewSet):
 class FileUploadViewSet(viewsets.ModelViewSet):
     queryset = FileUpload.objects.all()
     serializer_class = FileUploadSerializer
-    parser_classes = (MultiPartParser, FormParser)
     permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly]
+        permissions.AllowAny]
 
-    def perform_create(self, serializer):
-        serializer.save(creator=self.request.user)
+    def pre_save(self, obj):
+        obj.samplesheet = self.request.FILES.get('file')

@@ -236,8 +236,8 @@ class Command(models.Model):
 
 
 def file_upload_to_directory(instance, filename):
-    return '/'.join(['media', str(instance.id), filename])
+    return '/'.join(['media', 'temporary', filename])
 
 
 class FileUpload(models.Model):
-    file = models.FileField(upload_to=file_upload_to_directory, blank=True, null=True);
+    file = models.FileField(upload_to=file_upload_to_directory, blank=True, null=True, default='')
