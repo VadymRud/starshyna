@@ -120,7 +120,7 @@ msgstr "Національності"
 
 #: soldier/models.py:85 soldier/models.py:86 soldier/models.py:179
 msgid "Education"
-msgstr ""
+msgstr "Освіта"
 
 #: soldier/models.py:96
 msgid "State"
