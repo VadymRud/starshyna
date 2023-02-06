@@ -240,4 +240,5 @@ def file_upload_to_directory(instance, filename):
 
 
 class FileUpload(models.Model):
+    name = models.TextField(blank=True, null=True)
     file = models.FileField(upload_to=file_upload_to_directory, blank=True, null=True, default='')
