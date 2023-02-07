@@ -3,10 +3,12 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from django_tables2 import SingleTableView
-from .models import ServiseID, Region, FileUpload, MilitaryRank, Platoon, Unit
+from .models import (Region, FileUpload, MilitaryRank, Platoon, Unit, Company, Creed, Nationality,
+                     Education, State, OfficialPosition, ServiseID)
 from .tables import ServiseIDTable
 from .serializers import (RegionSerializer, FileUploadSerializer, MilitaryRankSerializer, PlatoonSerializer,
-                          UnitSerializer)
+                          UnitSerializer, CompanySerializer, CreedSerializer, NationalitySerializer,
+                          EducationSerializer, StateSerializer, OfficialPositionSerializer, ServiseIDSerializer)
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
@@ -36,13 +38,30 @@ class RegionViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
-#Platoon
 class PlatoonViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows regions to be viewed or edited.
     """
     queryset = Platoon.objects.all()
     serializer_class = PlatoonSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class CompanyViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Company to be viewed or edited.
+    """
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class CreedViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Creed to be viewed or edited.
+    """
+    queryset = Creed.objects.all()
+    serializer_class = CreedSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
@@ -55,6 +74,58 @@ class UnitViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
+class OfficialPositionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows OfficialPosition to be viewed or edited.
+    """
+    queryset = OfficialPosition.objects.all()
+    serializer_class = OfficialPositionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class NationalityViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Nationality to be viewed or edited.
+    """
+    queryset = Nationality.objects.all()
+    serializer_class = NationalitySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class EducationViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Education to be viewed or edited.
+    """
+    queryset = Education.objects.all()
+    serializer_class = EducationSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class StateViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows State to be viewed or edited.
+    """
+    queryset = State.objects.all()
+    serializer_class = StateSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class OfficialPositionViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows OfficialPosition to be viewed or edited.
+    """
+    queryset = OfficialPosition.objects.all()
+    serializer_class = OfficialPositionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class ServiseIDViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows ServiseID to be viewed or edited.
+    """
+    queryset = ServiseID.objects.all()
+    serializer_class = ServiseIDSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class FileUploadViewSet(viewsets.ModelViewSet):
