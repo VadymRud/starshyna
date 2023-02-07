@@ -72,6 +72,16 @@ class OfficialPositionSerializer(serializers.HyperlinkedModelSerializer):
 
 #ServiseID
 class ServiseIDSerializer(serializers.HyperlinkedModelSerializer):
+    military_ranks = MilitaryRankSerializer()
+    creed = CreedSerializer()
+    nationality = NationalitySerializer()
+    education = EducationSerializer()
+    state_pr = StateSerializer()
+    region_pr = RegionSerializer()
+    state_fact = StateSerializer()
+    region_fact = RegionSerializer()
+
+
     class Meta:
         model = ServiseID
         fields = '__all__'

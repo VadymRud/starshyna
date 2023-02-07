@@ -5,3 +5,4 @@ Markdown
 Pygments
 djangorestframework
 djoser
+django-cors-headers
