@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company,
-                     Education, Creed, Nationality, Command, Region, State, FileUpload)
+                     Education, Creed, Nationality, Command, Region, State, FileUpload, BattleWound, Reward)
 #from osoba.widgets import CustomDatePickerInput
 
 
@@ -50,12 +50,12 @@ class ServiseIDAdmin(admin.ModelAdmin):
         (_('Images'), {
             'fields': ('image_face3x4',)
 
+        }),
+        (_('Battle info'), {
+            'fields': ('battle_wound', 'reward')
+
         })
     )
-    # change_form_template = 'admin/ocoba_change_form.html'
-    # formfield_overrides = {
-    #         models.DateField: {'widget': MonthPickerInput}
-    #     }
 
 
 admin.site.register(Company)
@@ -71,3 +71,5 @@ admin.site.register(Command)
 admin.site.register(State)
 admin.site.register(Region)
 admin.site.register(FileUpload)
+admin.site.register(BattleWound)
+admin.site.register(Reward)

@@ -120,8 +120,34 @@ class OfficialPosition(models.Model):
         verbose_name_plural = _('Official Positions')
 
 
+class BattleWound(models.Model):
+    date = models.DateField(null=True, blank=True)
+    place = models.TextField(null=True, blank=True)
+    text = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return '{date}'.format(date=self.date)
+
+    class Meta:
+        verbose_name = _('Battle Wound')
+        verbose_name_plural = _('Battle Wounds')
+
+
+class Reward(models.Model):
+    date = models.DateField(null=True, blank=True)
+    name = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return '{date}'.format(date=self.date)
+
+    class Meta:
+        verbose_name = _('Reward')
+        verbose_name_plural = _('Rewards')
+
+
 def image_directory_path(instance, filename):
-    return '{}/images/{}_{}_{}_{}/{}'.format('media', instance.military_ranks.name, instance.name, \
+    return '{}/images/{}_{}_{}_{}/{}'.format('media', instance.military_ranks.name, instance.name,
                                              instance.sename, instance.third_name, filename)
 
 
@@ -199,6 +225,8 @@ class ServiseID(models.Model):
     father = models.CharField(max_length=500, verbose_name=_('father'), blank=True, null=True)
     mother = models.CharField(max_length=500, verbose_name=_('mother'), blank=True, null=True)
     partner = models.CharField(max_length=500, verbose_name=_('partner'), blank=True, null=True)
+    battle_wound = models.ManyToManyField(BattleWound, verbose_name=_('battle wound'), blank=True, null=True)
+    reward = models.ManyToManyField(Reward, verbose_name=_('reward'), blank=True, null=True)
 
     def __str__(self):
         return '{} {} {} {}'.format(str(self.military_ranks.name), str.upper(self.sename), str(self.name),

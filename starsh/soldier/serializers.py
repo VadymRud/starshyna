@@ -21,56 +21,60 @@ class PlatoonSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['name', 'priorety']
 
 
-#Unit
 class UnitSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Unit
         fields = ['name']
 
 
-#Company
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Company
         fields = ['unik', 'name', 'short_name']
 
 
-#Creed
 class CreedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Creed
         fields = ['name']
 
 
-#Nationality
 class NationalitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Nationality
         fields = ['name']
 
 
-#Education
 class EducationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Education
         fields = ['name']
 
 
-#State
 class StateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = State
         fields = ['name']
 
 
-#OfficialPosition
 class OfficialPositionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OfficialPosition
         fields = ['name']
 
 
-#ServiseID
+class BattleWoundSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = BattleWound
+        fields = '__all__'
+
+
+class RewardSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Reward
+        fields = '__all__'
+
+
 class ServiseIDSerializer(serializers.HyperlinkedModelSerializer):
     military_ranks = MilitaryRankSerializer()
     creed = CreedSerializer()
@@ -80,13 +84,14 @@ class ServiseIDSerializer(serializers.HyperlinkedModelSerializer):
     region_pr = RegionSerializer()
     state_fact = StateSerializer()
     region_fact = RegionSerializer()
-
+    battle_wound = BattleWoundSerializer(many=True)
+    reward = RewardSerializer(many=True)
 
     class Meta:
         model = ServiseID
         fields = '__all__'
 
-#FileUpload
+
 class FileUploadSerializer(serializers.ModelSerializer):
     file = serializers.FileField(required=False)
 
