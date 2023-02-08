@@ -69,9 +69,9 @@ class BattleWoundSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class RewardSerializer(serializers.HyperlinkedModelSerializer):
+class AwardSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Reward
+        model = Award
         fields = '__all__'
 
 
@@ -85,7 +85,7 @@ class ServiseIDSerializer(serializers.HyperlinkedModelSerializer):
     state_fact = StateSerializer()
     region_fact = RegionSerializer()
     battle_wound = BattleWoundSerializer(many=True)
-    reward = RewardSerializer(many=True)
+    award = AwardSerializer(many=True)
 
     class Meta:
         model = ServiseID

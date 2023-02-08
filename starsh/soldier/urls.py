@@ -2,7 +2,7 @@ from django.conf import settings
 from django.urls import include, path
 from .views import (ServiseIDListView, RegionViewSet, FileUploadViewSet, CustomAuthToken, MilitaryRankViewSet,
                     PlatoonViewSet, UnitViewSet, CompanyViewSet, NationalityViewSet, EducationViewSet, StateViewSet,
-                    OfficialPositionViewSet, ServiseIDViewSet, BattleWoundViewSet, RewardViewSet)
+                    OfficialPositionViewSet, ServiseIDViewSet, BattleWoundViewSet, AwardViewSet)
 from rest_framework import routers
 
 
@@ -19,7 +19,7 @@ router.register(r'states', StateViewSet)
 router.register(r'officialpositions', OfficialPositionViewSet)
 router.register(r'soldiers', ServiseIDViewSet)
 router.register(r'battle_wounds', BattleWoundViewSet)
-router.register(r'reward', RewardViewSet)
+router.register(r'award', AwardViewSet)
 #router.register(r'sold_auth', UserAuthificateView)
 
 urlpatterns = [

@@ -133,7 +133,7 @@ class BattleWound(models.Model):
         verbose_name_plural = _('Battle Wounds')
 
 
-class Reward(models.Model):
+class Award(models.Model):
     date = models.DateField(null=True, blank=True)
     name = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -225,8 +225,9 @@ class ServiseID(models.Model):
     father = models.CharField(max_length=500, verbose_name=_('father'), blank=True, null=True)
     mother = models.CharField(max_length=500, verbose_name=_('mother'), blank=True, null=True)
     partner = models.CharField(max_length=500, verbose_name=_('partner'), blank=True, null=True)
+    # участь в бойових діях
     battle_wound = models.ManyToManyField(BattleWound, verbose_name=_('battle wound'), blank=True, null=True)
-    reward = models.ManyToManyField(Reward, verbose_name=_('reward'), blank=True, null=True)
+    award = models.ManyToManyField(Award, verbose_name=_('reward'), blank=True, null=True)
 
     def __str__(self):
         return '{} {} {} {}'.format(str(self.military_ranks.name), str.upper(self.sename), str(self.name),

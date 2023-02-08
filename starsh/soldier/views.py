@@ -4,12 +4,12 @@ from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from django_tables2 import SingleTableView
 from .models import (Region, FileUpload, MilitaryRank, Platoon, Unit, Company, Creed, Nationality,
-                     Education, State, OfficialPosition, ServiseID, BattleWound, Reward)
+                     Education, State, OfficialPosition, ServiseID, BattleWound, Award)
 from .tables import ServiseIDTable
 from .serializers import (RegionSerializer, FileUploadSerializer, MilitaryRankSerializer, PlatoonSerializer,
                           UnitSerializer, CompanySerializer, CreedSerializer, NationalitySerializer,
                           EducationSerializer, StateSerializer, OfficialPositionSerializer, ServiseIDSerializer,
-                          BattleWoundSerializer, RewardSerializer)
+                          BattleWoundSerializer, AwardSerializer)
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
@@ -138,12 +138,12 @@ class BattleWoundViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 
-class RewardViewSet(viewsets.ModelViewSet):
+class AwardViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Reward to be viewed or edited.
     """
-    queryset = Reward.objects.all()
-    serializer_class = RewardSerializer
+    queryset = Award.objects.all()
+    serializer_class = AwardSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
