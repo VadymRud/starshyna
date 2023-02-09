@@ -226,8 +226,8 @@ class ServiseID(models.Model):
     mother = models.CharField(max_length=500, verbose_name=_('mother'), blank=True, null=True)
     partner = models.CharField(max_length=500, verbose_name=_('partner'), blank=True, null=True)
     # участь в бойових діях
-    battle_wound = models.ManyToManyField(BattleWound, verbose_name=_('battle wound'), blank=True, null=True)
-    award = models.ManyToManyField(Award, verbose_name=_('reward'), blank=True, null=True)
+    battle_wound = models.ManyToManyField(BattleWound, verbose_name=_('battle wound'), blank=True)
+    award = models.ManyToManyField(Award, verbose_name=_('reward'), blank=True)
 
     def __str__(self):
         return '{} {} {} {}'.format(str(self.military_ranks.name), str.upper(self.sename), str(self.name),

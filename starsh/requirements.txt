@@ -6,3 +6,4 @@ Pygments
 djangorestframework
 djoser
 django-cors-headers
+django-jsonform

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-02 15:32+0000\n"
+"POT-Creation-Date: 2023-02-09 08:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "Names in accs"
 msgstr ""
 
 #: soldier/admin.py:20 soldier/models.py:52 soldier/models.py:53
-#: staff/models.py:36
+#: staff/models.py:55 staff/models.py:93
 msgid "Company"
 msgstr ""
 
@@ -62,6 +62,10 @@ msgstr "Адреса"
 msgid "Images"
 msgstr ""
 
+#: soldier/admin.py:54
+msgid "Battle info"
+msgstr ""
+
 #: soldier/apps.py:8
 msgid "Persons"
 msgstr "Військовослужбовець"
@@ -70,7 +74,7 @@ msgstr "Військовослужбовець"
 #: soldier/models.py:33 soldier/models.py:45 soldier/models.py:57
 #: soldier/models.py:68 soldier/models.py:79 soldier/models.py:90
 #: soldier/models.py:101 soldier/models.py:112 staff/models.py:8
-#: staff/models.py:37 starsh/templates/staff/pidrozdilname_list.html:14
+#: staff/models.py:96 starsh/templates/staff/pidrozdilname_list.html:14
 msgid "Name"
 msgstr "Імʼя"
 
@@ -86,11 +90,11 @@ msgstr "Військове звання"
 msgid "Military Ranks"
 msgstr "Військові звання"
 
-#: soldier/models.py:28
+#: soldier/models.py:28 staff/models.py:69 staff/models.py:94
 msgid "Platoon"
 msgstr "Взвод"
 
-#: soldier/models.py:29
+#: soldier/models.py:29 staff/models.py:70
 msgid "Platoons"
 msgstr "Взвода"
 
@@ -102,7 +106,8 @@ msgstr ""
 msgid "Units"
 msgstr ""
 
-#: soldier/models.py:44 staff/models.py:35
+#: soldier/models.py:44 staff/models.py:33 staff/models.py:47
+#: staff/models.py:61 staff/models.py:75 staff/models.py:90
 msgid "Unic number"
 msgstr "Унікальний номер"
 
@@ -118,7 +123,7 @@ msgstr "Національність"
 msgid "Nationalities"
 msgstr "Національності"
 
-#: soldier/models.py:85 soldier/models.py:86 soldier/models.py:179
+#: soldier/models.py:85 soldier/models.py:86 soldier/models.py:205
 msgid "Education"
 msgstr "Освіта"
 
@@ -150,303 +155,354 @@ msgstr ""
 msgid "Official Positions"
 msgstr ""
 
-#: soldier/models.py:129 soldier/models.py:226
+#: soldier/models.py:132
+msgid "Battle Wound"
+msgstr ""
+
+#: soldier/models.py:133
+msgid "Battle Wounds"
+msgstr ""
+
+#: soldier/models.py:145
+msgid "Reward"
+msgstr ""
+
+#: soldier/models.py:146
+msgid "Rewards"
+msgstr ""
+
+#: soldier/models.py:155 soldier/models.py:255
 msgid "Name Person"
 msgstr "Імʼя"
 
-#: soldier/models.py:130
+#: soldier/models.py:156
 msgid "Sename"
 msgstr "Прізвище"
 
-#: soldier/models.py:131
+#: soldier/models.py:157
 msgid "third name"
 msgstr "По-батькові"
 
-#: soldier/models.py:132
+#: soldier/models.py:158
 msgid "nickname"
 msgstr "Позивний"
 
-#: soldier/models.py:134
+#: soldier/models.py:160
 msgid "Name Person in accs"
 msgstr ""
 
-#: soldier/models.py:135
+#: soldier/models.py:161
 msgid "Sename in accs"
 msgstr ""
 
-#: soldier/models.py:136
+#: soldier/models.py:162
 msgid "third name  in accs"
 msgstr ""
 
-#: soldier/models.py:138
+#: soldier/models.py:164
 msgid "birth date"
 msgstr "Дата народження"
 
-#: soldier/models.py:139
+#: soldier/models.py:165
 msgid "military rank"
 msgstr "Військове звання"
 
-#: soldier/models.py:143
+#: soldier/models.py:169
 msgid "image3x4"
 msgstr "Фото 3Х4"
 
-#: soldier/models.py:144
+#: soldier/models.py:170
 msgid "image_face3x4"
 msgstr ""
 
-#: soldier/models.py:147
+#: soldier/models.py:173
 msgid "Military office"
 msgstr "Воєнкомат"
 
-#: soldier/models.py:148
+#: soldier/models.py:174
 msgid "date of conscription"
 msgstr ""
 
-#: soldier/models.py:149
+#: soldier/models.py:175
 msgid "order date"
 msgstr ""
 
-#: soldier/models.py:150
+#: soldier/models.py:176
 msgid "order number"
 msgstr ""
 
-#: soldier/models.py:152
+#: soldier/models.py:178
 msgid "militaryID seria"
 msgstr ""
 
-#: soldier/models.py:153
+#: soldier/models.py:179
 msgid "militaryID number"
 msgstr ""
 
-#: soldier/models.py:154
+#: soldier/models.py:180
 msgid "who_militaryID"
 msgstr ""
 
-#: soldier/models.py:155
+#: soldier/models.py:181
 msgid "militaryID_date"
 msgstr ""
 
-#: soldier/models.py:156
+#: soldier/models.py:182
 msgid "weapon"
 msgstr ""
 
-#: soldier/models.py:157
+#: soldier/models.py:183
 msgid "military_rank_id"
 msgstr ""
 
-#: soldier/models.py:158
+#: soldier/models.py:184
 msgid "military_rank_date"
 msgstr ""
 
-#: soldier/models.py:161
+#: soldier/models.py:187
 msgid "ID seria"
 msgstr ""
 
-#: soldier/models.py:162
+#: soldier/models.py:188
 msgid "ID number"
 msgstr ""
 
-#: soldier/models.py:163
+#: soldier/models.py:189
 msgid "who_ID"
 msgstr ""
 
-#: soldier/models.py:164
+#: soldier/models.py:190
 msgid "ID_date"
 msgstr ""
 
-#: soldier/models.py:165
+#: soldier/models.py:191
 msgid "ipn"
 msgstr ""
 
-#: soldier/models.py:168
+#: soldier/models.py:194
 msgid "orphan"
 msgstr ""
 
-#: soldier/models.py:169
+#: soldier/models.py:195
 msgid "married"
 msgstr ""
 
-#: soldier/models.py:170
+#: soldier/models.py:196
 msgid "halforphan"
 msgstr ""
 
-#: soldier/models.py:171
+#: soldier/models.py:197
 msgid "work"
 msgstr ""
 
-#: soldier/models.py:172
+#: soldier/models.py:198
 msgid "mobilization"
 msgstr ""
 
-#: soldier/models.py:173
+#: soldier/models.py:199
 msgid "driveid"
 msgstr "водійське посвідчення"
 
-#: soldier/models.py:174
+#: soldier/models.py:200
 msgid "driveid category"
 msgstr ""
 
-#: soldier/models.py:175
+#: soldier/models.py:201
 msgid "creed"
 msgstr "віросповідання"
 
-#: soldier/models.py:177
+#: soldier/models.py:203
 msgid "nationality"
 msgstr "національність"
 
-#: soldier/models.py:180
+#: soldier/models.py:206
 msgid "blood_type"
 msgstr ""
 
-#: soldier/models.py:181
+#: soldier/models.py:207
 msgid "RH"
 msgstr ""
 
-#: soldier/models.py:184
+#: soldier/models.py:210
 msgid "state"
 msgstr ""
 
-#: soldier/models.py:186
+#: soldier/models.py:212
 msgid "region"
 msgstr ""
 
-#: soldier/models.py:188
+#: soldier/models.py:214
 msgid "addres_pr"
 msgstr ""
 
-#: soldier/models.py:189
+#: soldier/models.py:215
 msgid "postal code_pr"
 msgstr ""
 
-#: soldier/models.py:191
+#: soldier/models.py:217
 msgid "state fact"
 msgstr ""
 
-#: soldier/models.py:194
+#: soldier/models.py:220
 msgid "region fact"
 msgstr ""
 
-#: soldier/models.py:195
+#: soldier/models.py:221
 msgid "address fact"
 msgstr ""
 
-#: soldier/models.py:196
+#: soldier/models.py:222
 msgid "postal code"
 msgstr ""
 
-#: soldier/models.py:197
+#: soldier/models.py:223
 msgid "phone home"
 msgstr ""
 
-#: soldier/models.py:198
+#: soldier/models.py:224
 msgid "phone mobile"
 msgstr ""
 
-#: soldier/models.py:199
+#: soldier/models.py:225
 msgid "father"
 msgstr ""
 
-#: soldier/models.py:200
+#: soldier/models.py:226
 msgid "mother"
 msgstr ""
 
-#: soldier/models.py:201
+#: soldier/models.py:227
 msgid "partner"
 msgstr ""
 
-#: soldier/models.py:208
+#: soldier/models.py:229
+msgid "battle wound"
+msgstr ""
+
+#: soldier/models.py:230
+msgid "reward"
+msgstr ""
+
+#: soldier/models.py:237
 msgid "ServiseID"
 msgstr ""
 
-#: soldier/models.py:209
+#: soldier/models.py:238
 msgid "ServiseIDs"
 msgstr ""
 
-#: soldier/models.py:214
+#: soldier/models.py:243
 msgid "Battalion commander"
 msgstr ""
 
-#: soldier/models.py:215
+#: soldier/models.py:244
 msgid "Deputy Battalion Commander"
 msgstr ""
 
-#: soldier/models.py:216
+#: soldier/models.py:245
 msgid "Deputy Battalion Commander for Moral and Psychological Support"
 msgstr ""
 
-#: soldier/models.py:217
+#: soldier/models.py:246
 msgid "Assistant Battalion Commander for Legal Affairs"
 msgstr ""
 
-#: soldier/models.py:218
+#: soldier/models.py:247
 msgid "Officer-psychologist"
 msgstr ""
 
-#: soldier/models.py:219
+#: soldier/models.py:248
 msgid "Chief sergeant of a military unit"
 msgstr ""
 
-#: soldier/models.py:220
+#: soldier/models.py:249
 msgid "Technician"
 msgstr ""
 
-#: soldier/models.py:221
+#: soldier/models.py:250
 msgid "Deputy Battalion Commander for Airborne Training"
 msgstr ""
 
-#: soldier/models.py:222
+#: soldier/models.py:251
 msgid "Chief of Staff - First Deputy Battalion Commander"
 msgstr ""
 
-#: soldier/models.py:223
+#: soldier/models.py:252
 msgid "Senior assistant chief of staff for personnel and military units"
 msgstr ""
 
-#: soldier/models.py:225
+#: soldier/models.py:254
 msgid "Name Command"
 msgstr ""
 
-#: soldier/models.py:227
+#: soldier/models.py:256
 msgid "TVO"
 msgstr ""
 
-#: soldier/models.py:234
+#: soldier/models.py:263
 msgid "Command"
 msgstr ""
 
-#: soldier/models.py:235
+#: soldier/models.py:264
 msgid "Commands"
 msgstr ""
 
-#: staff/models.py:38 starsh/templates/staff/pidrozdilname_list.html:15
+#: staff/models.py:34 staff/models.py:35 staff/models.py:48 staff/models.py:49
+#: staff/models.py:62 staff/models.py:63 staff/models.py:76 staff/models.py:77
+#, fuzzy
+#| msgid "Sename"
+msgid "name"
+msgstr "Прізвище"
+
+#: staff/models.py:41 staff/models.py:91
+msgid "Battalion"
+msgstr ""
+
+#: staff/models.py:42
+msgid "Battalions"
+msgstr ""
+
+#: staff/models.py:56
+msgid "Companies"
+msgstr ""
+
+#: staff/models.py:83 staff/models.py:95
+msgid "Squad"
+msgstr ""
+
+#: staff/models.py:84
+msgid "Squads"
+msgstr ""
+
+#: staff/models.py:97 starsh/templates/staff/pidrozdilname_list.html:15
 msgid "shpk"
 msgstr ""
 
-#: staff/models.py:39
+#: staff/models.py:98
 msgid "ocoba"
 msgstr ""
 
-#: staff/models.py:40
+#: staff/models.py:99
 msgid "VOS"
 msgstr ""
 
-#: staff/models.py:41
+#: staff/models.py:100
 msgid "pozyvnyy"
 msgstr ""
 
-#: staff/models.py:42 starsh/templates/staff/pidrozdilname_list.html:19
+#: staff/models.py:101 starsh/templates/staff/pidrozdilname_list.html:19
 msgid "salary"
 msgstr ""
 
-#: staff/models.py:43
+#: staff/models.py:102
 msgid "tariff category"
 msgstr ""
 
-#: staff/models.py:44 starsh/templates/staff/pidrozdilname_list.html:21
+#: staff/models.py:103 starsh/templates/staff/pidrozdilname_list.html:21
 msgid "Vacant"
 msgstr ""
 
-#: staff/models.py:50 staff/models.py:51
+#: staff/models.py:110 staff/models.py:111
 #: starsh/templates/staff/pidrozdilname_list.html:12
 msgid "Staff"
 msgstr ""
@@ -455,11 +511,11 @@ msgstr ""
 msgid "storages"
 msgstr ""
 
-#: starsh/settings/base.py:134
+#: starsh/settings/base.py:138
 msgid "English"
 msgstr ""
 
-#: starsh/settings/base.py:135
+#: starsh/settings/base.py:139
 msgid "Українська"
 msgstr ""
 

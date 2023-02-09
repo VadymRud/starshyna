@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "django_tables2",
+    "django_jsonform",
     "corsheaders",
     "djoser",
     "soldier",

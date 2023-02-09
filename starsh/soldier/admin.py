@@ -52,7 +52,7 @@ class ServiseIDAdmin(admin.ModelAdmin):
 
         }),
         (_('Battle info'), {
-            'fields': ('battle_wound', 'reward')
+            'fields': ('battle_wound', 'award')
 
         })
     )
