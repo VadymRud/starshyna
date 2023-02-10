@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from django_tables2 import SingleTableView
-from .models import (Region, FileUpload, MilitaryRank, Platoon, Unit, Company, Creed, Nationality,
+from .models import (Region, FileUpload, MilitaryRank, Platoon, Unit, Company, Creed, Nationality, Creed,
                      Education, State, OfficialPosition, ServiseID, BattleWound, Award)
 from .tables import ServiseIDTable
 from .serializers import (RegionSerializer, FileUploadSerializer, MilitaryRankSerializer, PlatoonSerializer,
