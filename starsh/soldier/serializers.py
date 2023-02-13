@@ -7,7 +7,7 @@ from staff.models import Staff
 class RegionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Region
-        fields = ['name']
+        fields = ['name', 'id']
 
 
 class MilitaryRankSerializer(serializers.HyperlinkedModelSerializer):
