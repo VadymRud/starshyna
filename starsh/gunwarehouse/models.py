@@ -33,6 +33,7 @@ class Ammunition(models.Model):
 
 
 class Service(models.Model):
+    # Служба
     full_name = models.CharField(max_length=512, verbose_name=_('Full name'))
     name = models.CharField(max_length=512, verbose_name=_('Name'))
 
@@ -42,6 +43,45 @@ class Service(models.Model):
     class Meta:
         verbose_name = _('Service')
         verbose_name_plural = _('Services')
+
+
+class Consignor(models.Model):
+    # Вантажовідправник
+    full_name = models.CharField(max_length=512, verbose_name=_('Full name'))
+    name = models.CharField(max_length=512, verbose_name=_('Name'))
+
+    def __str__(self):
+        return self.name[:50]
+
+    class Meta:
+        verbose_name = _('Consignor')
+        verbose_name_plural = _('Consignors')
+
+
+class Consignee(models.Model):
+    # Вантажоотримувач
+    full_name = models.CharField(max_length=512, verbose_name=_('Full name'))
+    name = models.CharField(max_length=512, verbose_name=_('Name'))
+
+    def __str__(self):
+        return self.name[:50]
+
+    class Meta:
+        verbose_name = _('Consignee')
+        verbose_name_plural = _('Consignees')
+
+
+class ResponsibleRecipient(models.Model):
+    # Відповідальний одержувач
+    full_name = models.CharField(max_length=512, verbose_name=_('Full name'))
+    name = models.CharField(max_length=512, verbose_name=_('Name'))
+
+    def __str__(self):
+        return self.name[:50]
+
+    class Meta:
+        verbose_name = _('Responsible Recipient')
+        verbose_name_plural = _('Responsible Recipients')
 
 
 class Invoice(models.Model):
@@ -75,7 +115,7 @@ class Invoice(models.Model):
     }
     number = models.CharField(verbose_name=_('Number'), max_length=50)
     date_created = models.DateTimeField(default=timezone.now, null=True, blank=True, verbose_name=_('Date created'))
-    service = models.ForeignKey(Service, verbose_name=_('Service'), on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, verbose_name=_('Service'), on_delete=models.CASCADE, null=True, blank=True)
     items = JSONField(schema=ITEMS_SCHEMA)
 
     def __str__(self):

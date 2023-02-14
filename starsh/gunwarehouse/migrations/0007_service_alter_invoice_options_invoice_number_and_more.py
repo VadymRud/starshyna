@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='invoice',
             name='service',
-            field=models.ForeignKey(default=7, on_delete=django.db.models.deletion.CASCADE, to='gunwarehouse.service', verbose_name='Service'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='gunwarehouse.service', verbose_name='Service'),
             preserve_default=False,
         ),
     ]
