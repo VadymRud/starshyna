@@ -2,6 +2,20 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django_jsonform.models.fields import JSONField
 from django.utils import timezone
+from soldier.models import ServiseID
+
+
+class GunWarehouse(models.Model):
+    # Склад БК
+    full_name = models.CharField(max_length=512, verbose_name=_('Full name'))
+    name = models.CharField(max_length=512, verbose_name=_('Name'))
+
+    def __str__(self):
+        return self.name[:50]
+
+    class Meta:
+        verbose_name = _('Gun Warehouse')
+        verbose_name_plural = _('Gun Warehouses')
 
 
 class Ammunition(models.Model):
@@ -113,13 +127,21 @@ class Invoice(models.Model):
         }
       }
     }
+    gun_warehouse = models.ForeignKey(GunWarehouse, verbose_name=_('Gun Warehouse'), on_delete=models.CASCADE,
+                                      null=True, blank=True)
     number = models.CharField(verbose_name=_('Number'), max_length=50)
     date_created = models.DateTimeField(default=timezone.now, null=True, blank=True, verbose_name=_('Date created'))
     service = models.ForeignKey(Service, verbose_name=_('Service'), on_delete=models.CASCADE, null=True, blank=True)
+    consignor = models.ForeignKey(Consignor, verbose_name=_('Consignor'), on_delete=models.CASCADE, null=True,
+                                  blank=True)
+    consignee = models.ForeignKey(Consignee, verbose_name=_('Consignee'), on_delete=models.CASCADE, null=True,
+                                  blank=True)
+    responsible_recipient = models.ForeignKey(ServiseID, verbose_name=_('ResponsibleRecipient'),
+                                              on_delete=models.CASCADE, null=True, blank=True)
     items = JSONField(schema=ITEMS_SCHEMA)
 
     def __str__(self):
-        return '{pk}'.format(pk=self.pk)
+        return '{pk} {number}'.format(pk=self.pk, number=self.number)
 
     class Meta:
         verbose_name = _('Invoice')
