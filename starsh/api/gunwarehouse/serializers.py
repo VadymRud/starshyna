@@ -12,11 +12,11 @@ class AmmunitionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ammunition
         fields = '__all__'
-        
 
-class InvoiceSerializer(serializers.HyperlinkedModelSerializer):
+
+class ServiceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Invoice
+        model = Service
         fields = '__all__'
 
 
