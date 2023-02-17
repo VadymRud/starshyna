@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     "storage",
     "staff",
     "gunwarehouse",
-    # "starsh.settings",
+    "starsh.settings",
 
 
 ]
@@ -76,6 +76,8 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
     "django.middleware.locale.LocaleMiddleware",
 ]
+
+ALLOWED_HOSTS = ["*"]
 
 ROOT_URLCONF = "starsh.urls"
 
@@ -196,9 +198,6 @@ WAGTAILSEARCH_BACKENDS = {
 WAGTAILADMIN_BASE_URL = "http://example.com"
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
-    ),
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
