@@ -99,6 +99,10 @@ class ResponsibleRecipient(models.Model):
 
 
 class Invoice(models.Model):
+    purposes = [
+        ('1', _('Arrived')),
+        ('2', _('Out')),
+    ]
     amms = Ammunition.objects.all()
     choices = []
     for amm in amms:
@@ -130,6 +134,7 @@ class Invoice(models.Model):
     gun_warehouse = models.ForeignKey(GunWarehouse, verbose_name=_('Gun Warehouse'), on_delete=models.CASCADE,
                                       null=True, blank=True)
     number = models.CharField(verbose_name=_('Number'), max_length=50)
+    purpose = models.CharField(verbose_name=_('Purpose'), choices=purposes, default='2', max_length=50)
     date_created = models.DateTimeField(default=timezone.now, null=True, blank=True, verbose_name=_('Date created'))
     service = models.ForeignKey(Service, verbose_name=_('Service'), on_delete=models.CASCADE, null=True, blank=True)
     consignor = models.ForeignKey(Consignor, verbose_name=_('Consignor'), on_delete=models.CASCADE, null=True,

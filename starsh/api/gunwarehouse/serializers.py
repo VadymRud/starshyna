@@ -20,4 +20,30 @@ class ServiceSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class ConsigneeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Consignee
+        fields = '__all__'
 
+
+class ConsignorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Consignor
+        fields = '__all__'
+
+
+class ResponsibleRecipientSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ResponsibleRecipient
+        fields = '__all__'
+
+
+class InvoiceSerializer(serializers.HyperlinkedModelSerializer):
+    gun_warehouse = GunWarehouseSerializer()
+    service = ServiceSerializer()
+    consignor = ConsignorSerializer()
+    consignee = ConsigneeSerializer()
+
+    class Meta:
+        model = Invoice
+        fields = '__all__'
