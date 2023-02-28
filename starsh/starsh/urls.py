@@ -8,6 +8,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from api.soldier import urls as soldier_urls
 from api.gunwarehouse import urls as gw_urls
+from report import urls as report_urls
 from search import views as search_views
 
 urlpatterns = [
@@ -17,6 +18,7 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path("soldiers/", include(soldier_urls)),
     path("gunwarehouse/", include(gw_urls)),
+    path("reports/", include(report_urls)),
     path("api-auth/", include('rest_framework.urls', namespace='rest_framework')),
     path("auth/", include('djoser.urls')),
     path("auth/", include('djoser.urls.authtoken')),

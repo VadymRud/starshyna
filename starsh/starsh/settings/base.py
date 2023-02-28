@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "storage",
     "staff",
     "gunwarehouse",
+    "report",
     # "starsh.settings",
 
 
