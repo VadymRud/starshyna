@@ -1,20 +1,13 @@
 {% extends "base.html" %}
-
-
-{% block body %}
-<h1><tt>django-tables2</tt> examples</h1>
-<p>This page demonstrates various types of tables being rendered via
-<tt>django-tables2</tt>.</p>
-
-<h2>Example 1 — QuerySet</h2>
-<h3>via <tt>as_html()</tt></h3>
-<pre>{% templatetag openvariable %} example1.as_html {% templatetag closevariable %}</pre>
-{{ example1.as_html }}
-
-<h3>via template tag</h3>
-<pre>{% templatetag openblock %} load django_tables2 {% templatetag closeblock %}
-{% templatetag openblock %} render_table example1 {% templatetag closeblock %}</pre>
 {% load django_tables2 %}
-{% render_table example1 %}
+
+{% block content %}
+
+    {% for table in tables %}
+        {% render_table table %}
+    {% endfor %}
+
+
+
 
 {% endblock %}
