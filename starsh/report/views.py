@@ -15,23 +15,9 @@ class StaffListView(SingleTableView):
     template_name = 'report/staff_list.html'
 
 
-# class SoldierView(View):
-#
-#     def get(self, request, id):
-#         in_hand = gunwarehouse_invoice.objects.filter(purpose='2', responsible_recipient__id=id)
-#         gunwarehouse_invoices = GunWarehouseInvoiceTable(in_hand, prefix="1-")
-#         RequestConfig(request, paginate=False).configure(gunwarehouse_invoices)
-#         #hhhhhhh`asedrty7895trfr5rtfy6
-#         rendered = render_to_string('report/invoices.html', {'gunwarehouse_invoices': gunwarehouse_invoices})
-#         return HttpResponse(rendered)
-
-
 class SoldierView(MultiTableMixin, TemplateView):
     template_name = 'report/invoices.html'
     tables = None
-
-
-
 
     table_pagination = {
         'per_page': 10
