@@ -20,4 +20,5 @@ class SoldierView(View):
         in_hand = gunwarehouse_invoice.objects.filter(purpose='2', responsible_recipient__id=id)
         gunwarehouse_invoices = GunWarehouseInvoiceTable(in_hand, prefix="1-")
         RequestConfig(request, paginate=False).configure(gunwarehouse_invoices)
+        #hhhhhhh
         return HttpResponse({'gunwarehouse_invoices': gunwarehouse_invoices})
