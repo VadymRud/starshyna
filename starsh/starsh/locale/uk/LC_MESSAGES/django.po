@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 15:28+0000\n"
+"POT-Creation-Date: 2023-03-02 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,6 @@ msgstr "Зброярки"
 #: gunwarehouse/models.py:10 gunwarehouse/models.py:51
 #: gunwarehouse/models.py:64 gunwarehouse/models.py:77
 #: gunwarehouse/models.py:90
-#| msgid "Sename"
 msgid "Full name"
 msgstr "Прізвище"
 
@@ -45,12 +44,10 @@ msgid "Name"
 msgstr "Імʼя"
 
 #: gunwarehouse/models.py:17 gunwarehouse/models.py:134
-#| msgid "Gun warehouses"
 msgid "Gun Warehouse"
 msgstr "Зброярки"
 
 #: gunwarehouse/models.py:18
-#| msgid "Gun warehouses"
 msgid "Gun Warehouses"
 msgstr "Зброярки"
 
@@ -131,12 +128,16 @@ msgid "ResponsibleRecipient"
 msgstr "Відповідальний одержувач"
 
 #: gunwarehouse/models.py:152
-msgid "Invoice"
-msgstr "Накладна"
+#, fuzzy
+#| msgid "Ammunition"
+msgid "Invoice Ammunition"
+msgstr "Боєприпас"
 
 #: gunwarehouse/models.py:153
-msgid "Invoices"
-msgstr "Накладні"
+#, fuzzy
+#| msgid "Ammunition"
+msgid "Invoice Amunitions"
+msgstr "Боєприпас"
 
 #: soldier/admin.py:14
 msgid "Main data"
@@ -627,11 +628,11 @@ msgstr "Військовослужбовець"
 msgid "age"
 msgstr "Вік"
 
-#: starsh/settings/base.py:140 starsh/settings/prod.py:142
+#: starsh/settings/base.py:146 starsh/settings/prod.py:142
 msgid "English"
 msgstr ""
 
-#: starsh/settings/base.py:141 starsh/settings/prod.py:143
+#: starsh/settings/base.py:147 starsh/settings/prod.py:143
 msgid "Українська"
 msgstr ""
 
@@ -654,3 +655,9 @@ msgstr ""
 #: starsh/templates/staff/pidrozdilname_list.html:20
 msgid "Availability"
 msgstr "Доступність"
+
+#~ msgid "Invoice"
+#~ msgstr "Накладна"
+
+#~ msgid "Invoices"
+#~ msgstr "Накладні"

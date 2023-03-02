@@ -1,6 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% load static %}
 {% load django_tables2 %}
-
+{% block extra_css %}
+    <link href="{% static "bootstrap-5.2.3/css/bootstrap.min.css" %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
     {% for table in tables %}

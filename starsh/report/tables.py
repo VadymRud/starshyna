@@ -19,4 +19,5 @@ class GunWarehouseInvoiceTable(tables.Table):
     class Meta:
         model = gunwarehouse_invoice
         template_name = 'django_tables2/bootstrap.html'
-        fields = ('pk', 'gun_warehouse.name', 'number', 'ocoba.name', 'ocoba.sename',)
+        fields = ('pk', 'gun_warehouse.name', 'number', 'responsible_recipient.name', 'responsible_recipient.sename',
+                  )

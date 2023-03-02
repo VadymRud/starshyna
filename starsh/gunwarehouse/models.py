@@ -116,7 +116,7 @@ class Invoice(models.Model):
         "title": _("Quantity"),
         "keys": {
 
-          _("quantity"): {
+          "quantity": {
             "type": "integer"
           },
           "ammunition": {

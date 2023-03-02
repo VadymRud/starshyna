@@ -31,3 +31,20 @@ class SoldierView(MultiTableMixin, TemplateView):
             GunWarehouseInvoiceTable(qs1)
         ]
         return self.tables
+
+    # for invoice in invoices:
+    #     items = invoice.items
+    #     for item in items:
+    #         if item['ammunition']['ammunition'] in count_amm:
+    #             count_amm.update({item['ammunition']['ammunition']: item.get('quantity') + count_amm.get(
+    #                 item['ammunition']['ammunition'])})
+    #         else:
+    #             count_amm.update({item['ammunition']['ammunition']: item.get('quantity')})
+
+
+
+class SoldierInvoicesView(View):
+    template_name = 'report/soldier_invoices.html'
+
+    def get(self, request, id, *args, **kwargs):
+        return render(request, self.template_name, {'id': id})
