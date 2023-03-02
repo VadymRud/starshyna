@@ -5,7 +5,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from staff.models import Staff
-from gunwarehouse.models import Invoice as gunwarehouse_invoice
+from gunwarehouse.models import Invoice as gunwarehouse_invoice, Ammunition
 from .tables import StaffTable, GunWarehouseInvoiceTable
 
 
@@ -47,4 +47,19 @@ class SoldierInvoicesView(View):
     template_name = 'report/soldier_invoices.html'
 
     def get(self, request, id, *args, **kwargs):
-        return render(request, self.template_name, {'id': id})
+        invoices = gunwarehouse_invoice.objects.filter(purpose='2', responsible_recipient__id=self.kwargs.get('id'))
+        count_amm = {}
+        for invoice in invoices:
+            items = invoice.items
+            for item in items:
+                ammunition = Ammunition.objects.get(pk=item['ammunition']['ammunition'])
+                if item['ammunition']['ammunition'] in count_amm:
+                    count_amm.update({item['ammunition']['ammunition']: {
+                        'quantity': item.get('quantity') +
+                         count_amm.get(item['ammunition']['ammunition']).get('quantity'),
+                        'name': ammunition.name}
+                    })
+                else:
+                    count_amm.update({item['ammunition']['ammunition']: {'quantity': item.get('quantity'),
+                                                                         'name': ammunition.name}})
+        return render(request, self.template_name, {'id': count_amm})
