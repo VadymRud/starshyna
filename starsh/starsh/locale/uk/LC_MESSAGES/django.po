@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 12:04+0000\n"
+"POT-Creation-Date: 2023-03-03 11:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,17 +33,18 @@ msgstr "Прізвище"
 
 #: gunwarehouse/models.py:11 gunwarehouse/models.py:38
 #: gunwarehouse/models.py:52 gunwarehouse/models.py:65
-#: gunwarehouse/models.py:78 gunwarehouse/models.py:91 soldier/models.py:9
-#: soldier/models.py:21 soldier/models.py:22 soldier/models.py:33
-#: soldier/models.py:45 soldier/models.py:57 soldier/models.py:68
-#: soldier/models.py:79 soldier/models.py:90 soldier/models.py:101
-#: soldier/models.py:112 staff/models.py:8 staff/models.py:96
-#: storage/models.py:7 storage/models.py:8
+#: gunwarehouse/models.py:78 gunwarehouse/models.py:91
+#: gunwarehouse/models.py:200 soldier/models.py:9 soldier/models.py:21
+#: soldier/models.py:22 soldier/models.py:33 soldier/models.py:45
+#: soldier/models.py:57 soldier/models.py:68 soldier/models.py:79
+#: soldier/models.py:90 soldier/models.py:101 soldier/models.py:112
+#: staff/models.py:8 staff/models.py:96 storage/models.py:7 storage/models.py:8
 #: starsh/templates/staff/pidrozdilname_list.html:14
 msgid "Name"
 msgstr "Імʼя"
 
-#: gunwarehouse/models.py:17 gunwarehouse/models.py:134
+#: gunwarehouse/models.py:17 gunwarehouse/models.py:141
+#: gunwarehouse/models.py:247
 msgid "Gun Warehouse"
 msgstr "Зброярки"
 
@@ -51,7 +52,7 @@ msgstr "Зброярки"
 msgid "Gun Warehouses"
 msgstr "Зброярки"
 
-#: gunwarehouse/models.py:25
+#: gunwarehouse/models.py:25 gunwarehouse/models.py:188
 msgid "Attributes"
 msgstr "Атрибути"
 
@@ -59,15 +60,17 @@ msgstr "Атрибути"
 msgid "unit of measurement"
 msgstr "Одиниця вимірювання"
 
-#: gunwarehouse/models.py:39 gunwarehouse/models.py:138
+#: gunwarehouse/models.py:39 gunwarehouse/models.py:147
+#: gunwarehouse/models.py:250
 msgid "Date created"
 msgstr "Дата створення"
 
 #: gunwarehouse/models.py:45 gunwarehouse/models.py:46
+#: gunwarehouse/models.py:108
 msgid "Ammunition"
 msgstr "Боєприпас"
 
-#: gunwarehouse/models.py:58 gunwarehouse/models.py:139
+#: gunwarehouse/models.py:58 gunwarehouse/models.py:148
 msgid "Service"
 msgstr "Служба"
 
@@ -75,7 +78,7 @@ msgstr "Служба"
 msgid "Services"
 msgstr "Служби"
 
-#: gunwarehouse/models.py:71 gunwarehouse/models.py:140
+#: gunwarehouse/models.py:71 gunwarehouse/models.py:149
 msgid "Consignor"
 msgstr "Вантажовідправник"
 
@@ -83,7 +86,7 @@ msgstr "Вантажовідправник"
 msgid "Consignors"
 msgstr "Вантажовідправники"
 
-#: gunwarehouse/models.py:84 gunwarehouse/models.py:142
+#: gunwarehouse/models.py:84 gunwarehouse/models.py:151
 msgid "Consignee"
 msgstr "Вантажоодержувач"
 
@@ -99,45 +102,118 @@ msgstr "Відповідальний отримувач"
 msgid "Responsible Recipients"
 msgstr "Відповідальні отримувачі"
 
-#: gunwarehouse/models.py:103
+#: gunwarehouse/models.py:103 gunwarehouse/models.py:216
 msgid "Arrived"
 msgstr "Приход"
 
-#: gunwarehouse/models.py:104
+#: gunwarehouse/models.py:104 gunwarehouse/models.py:217
 msgid "Out"
 msgstr "З складу"
 
-#: gunwarehouse/models.py:116
+#: gunwarehouse/models.py:109
+msgid "Gun"
+msgstr "Зброя"
+
+#: gunwarehouse/models.py:110
+msgid "Devises"
+msgstr "Прилад"
+
+#: gunwarehouse/models.py:123 gunwarehouse/models.py:231
 msgid "Quantity"
 msgstr "Кількість"
 
-#: gunwarehouse/models.py:119
-msgid "quantity"
-msgstr "кількість"
-
-#: gunwarehouse/models.py:136
+#: gunwarehouse/models.py:144 gunwarehouse/models.py:249
 msgid "Number"
 msgstr "Номер"
 
-#: gunwarehouse/models.py:137
+#: gunwarehouse/models.py:145
 msgid "Purpose"
 msgstr "Мета"
 
-#: gunwarehouse/models.py:144
+#: gunwarehouse/models.py:146
+msgid "Good class"
+msgstr "Тип речі"
+
+#: gunwarehouse/models.py:153 gunwarehouse/models.py:252
 msgid "ResponsibleRecipient"
 msgstr "Відповідальний одержувач"
 
-#: gunwarehouse/models.py:152
-#, fuzzy
-#| msgid "Ammunition"
-msgid "Invoice Ammunition"
-msgstr "Боєприпас"
+#: gunwarehouse/models.py:165
+msgid "Invoice"
+msgstr "Накладна"
 
-#: gunwarehouse/models.py:153
-#, fuzzy
-#| msgid "Ammunition"
-msgid "Invoice Amunitions"
-msgstr "Боєприпас"
+#: gunwarehouse/models.py:166
+msgid "Invoices"
+msgstr "Накладні"
+
+#: gunwarehouse/models.py:171
+msgid "Pistol"
+msgstr "Пістолет(Пістолет-кулемет)"
+
+#: gunwarehouse/models.py:172
+msgid "Rifle"
+msgstr "Гвинтівка"
+
+#: gunwarehouse/models.py:173
+msgid "Machinegun"
+msgstr "Кулемет"
+
+#: gunwarehouse/models.py:174
+msgid "Grenade launcher"
+msgstr "Гранатомет"
+
+#: gunwarehouse/models.py:175
+msgid "Sniper rifle"
+msgstr "Снайперська гвинтівка"
+
+#: gunwarehouse/models.py:176
+msgid "Large-caliber weapon"
+msgstr "Крупно-каліберна зброя"
+
+#: gunwarehouse/models.py:180
+msgid "Not issued"
+msgstr "Не видана"
+
+#: gunwarehouse/models.py:181 gunwarehouse/models.py:203
+msgid "Issued"
+msgstr "Видана"
+
+#: gunwarehouse/models.py:182
+msgid "Miss"
+msgstr "Втрачена"
+
+#: gunwarehouse/models.py:199
+msgid "Type Weapon"
+msgstr "Тип зброї"
+
+#: gunwarehouse/models.py:201
+msgid "Calibre"
+msgstr "Калібр"
+
+#: gunwarehouse/models.py:202
+#| msgid "order number"
+msgid "Serial number"
+msgstr "Серійний номер"
+
+#: gunwarehouse/models.py:210
+#| msgid "weapon"
+msgid "Weapon"
+msgstr "зброя"
+
+#: gunwarehouse/models.py:211
+#| msgid "weapon"
+msgid "Weapons"
+msgstr "Зброя"
+
+#: gunwarehouse/models.py:260
+#| msgid "Invoice"
+msgid "Invoice Weapon"
+msgstr "Накладна на зброю"
+
+#: gunwarehouse/models.py:261
+#| msgid "Invoices"
+msgid "Invoice Weapons"
+msgstr "Накладні на зброю"
 
 #: soldier/admin.py:14
 msgid "Main data"
@@ -491,11 +567,11 @@ msgstr "Нагороди"
 
 #: soldier/models.py:237
 msgid "ServiseID"
-msgstr ""
+msgstr "Військовослужбовець"
 
 #: soldier/models.py:238
 msgid "ServiseIDs"
-msgstr ""
+msgstr "Військовослужбовці"
 
 #: soldier/models.py:243
 msgid "Battalion commander"
@@ -656,8 +732,15 @@ msgstr ""
 msgid "Availability"
 msgstr "Доступність"
 
-#~ msgid "Invoice"
-#~ msgstr "Накладна"
+#~ msgid "quantity"
+#~ msgstr "кількість"
 
-#~ msgid "Invoices"
-#~ msgstr "Накладні"
+#, fuzzy
+#~| msgid "Ammunition"
+#~ msgid "Invoice Ammunition"
+#~ msgstr "Боєприпас"
+
+#, fuzzy
+#~| msgid "Ammunition"
+#~ msgid "Invoice Amunitions"
+#~ msgstr "Боєприпас"
